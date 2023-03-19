@@ -12,16 +12,7 @@ class Phonebook extends Component {
     return (
       <div>
         <h1>Phonebook</h1>
-        <form
-          action=""
-          onSubmit={el => {
-            el.preventDefault();
-            const name = el.currentTarget.name.value;
-            const number = el.currentTarget.number.value;
-
-            console.log(name, number);
-          }}
-        >
+        <form>
           <label htmlFor="name">
             Name
             <input
@@ -47,11 +38,6 @@ class Phonebook extends Component {
         </form>
         <div>
           <h2>Contacts</h2>
-          <ul>
-            {this.state.contacts.map(el => {
-              return <li>{el.name}</li>;
-            })}
-          </ul>
         </div>
       </div>
     );
