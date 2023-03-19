@@ -14,7 +14,7 @@ class Phonebook extends Component {
         <h1>Phonebook</h1>
         <form>
           <label htmlFor="name">
-            Name
+            Name:
             <input
               type="text"
               name="name"
@@ -25,7 +25,7 @@ class Phonebook extends Component {
             />
           </label>
           <label htmlFor="number">
-            Number
+            Number:
             <input
               type="tel"
               name="number"
@@ -36,9 +36,6 @@ class Phonebook extends Component {
           </label>
           <button type="submit">Add contact</button>
         </form>
-        <div>
-          <h2>Contacts</h2>
-        </div>
       </div>
     );
   }
