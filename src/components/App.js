@@ -1,10 +1,12 @@
 import { GlobalStyle } from './App.styled';
-import Phonebook from './phonebook/Phonebook';
+import { ListContacts } from './phonebook/ListContacts';
+import { Forma } from './phonebook/Forma';
 
 export function App() {
   return (
     <GlobalStyle>
-      <Phonebook />
+      <ListContacts />
+      <Forma value={console.log(1)} />
     </GlobalStyle>
   );
 }
