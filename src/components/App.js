@@ -16,7 +16,6 @@ export class App extends Component {
     ],
     filter: '',
   };
-
   submitHandler = value => {
     const { contacts } = this.state;
     value.id = nanoid();
@@ -26,7 +25,6 @@ export class App extends Component {
         )
       : this.setState({ [contacts]: contacts.push(value) });
   };
-
   render() {
     const { contacts } = this.state;
     return (
