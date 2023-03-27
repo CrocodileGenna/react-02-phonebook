@@ -1,6 +1,9 @@
 import { Component } from 'react';
+import { Formik, Form, Field } from 'formik';
 
-export class Form extends Component {
+// import { FORM_DIV } from './styled/Form.styled';
+
+export class ItForm extends Component {
   state = {
     name: '',
     number: '',
@@ -24,33 +27,31 @@ export class Form extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <form action="" onSubmit={this.submitForm}>
-        <label>
-          Name
-          <input
+      <Formik>
+        <Form onSubmit={this.submitForm} autoComplete="off">
+          <Field
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            placeholder="name"
             value={name}
             onChange={this.nameChenge}
             required
           />
-        </label>
-        <label htmlFor="">
-          Number
-          <input
+          <Field
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            placeholder="number"
             value={number}
             onChange={this.nameChenge}
             required
           />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+          <button type="submit">Add contact</button>
+        </Form>
+      </Formik>
     );
   }
 }

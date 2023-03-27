@@ -1,6 +1,7 @@
 import { Component } from 'react';
-import { Form } from './phonebook/Form';
+import { ItForm } from './phonebook/Form';
 import { ListContacts } from './phonebook/ListContacts';
+import { Search } from './phonebook/Search';
 import { nanoid } from 'nanoid';
 
 import { GlobalStyle } from './App.styled';
@@ -16,6 +17,7 @@ export class App extends Component {
     ],
     filter: '',
   };
+
   submitHandler = value => {
     const { contacts } = this.state;
     value.id = nanoid();
@@ -25,12 +27,40 @@ export class App extends Component {
         )
       : this.setState({ [contacts]: contacts.push(value) });
   };
+
+  handleName = e => {
+    // console.log(e.target.value);
+    this.setState(prevState => ({
+      ...prevState,
+      filter: e.target.value,
+    }));
+  };
+
+  removeContact = currentId => {
+    this.setState(prevState => ({
+      ...prevState,
+      contacts: this.state.contacts.filter(({ id }) => id !== currentId),
+    }));
+  };
+
+  searchContacts = () => {
+    const { contacts, filter } = this.state;
+    if (filter) {
+      return contacts.filter(contact => contact.name.includes(filter));
+    }
+    return contacts;
+  };
+
   render() {
-    const { contacts } = this.state;
+    // const { contacts } = this.state;
     return (
       <GlobalStyle>
-        <Form submit={this.submitHandler} />
-        <ListContacts list={contacts} />
+        <ItForm submit={this.submitHandler} />
+        <Search search={this.handleName} />
+        <ListContacts
+          list={this.searchContacts()}
+          remove={this.removeContact}
+        />
       </GlobalStyle>
     );
   }
