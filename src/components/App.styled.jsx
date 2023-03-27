@@ -34,3 +34,5 @@ export const GlobalStyle = styled.div`
     height: auto;
   }
 `;
+
+export const LIST_DIV = styled.div``;

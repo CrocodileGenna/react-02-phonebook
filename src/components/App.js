@@ -4,7 +4,7 @@ import { ListContacts } from './phonebook/ListContacts';
 import { Search } from './phonebook/Search';
 import { nanoid } from 'nanoid';
 
-import { GlobalStyle } from './App.styled';
+import { GlobalStyle, LIST_DIV } from './App.styled';
 import Notiflix from 'notiflix';
 
 export class App extends Component {
@@ -56,11 +56,13 @@ export class App extends Component {
     return (
       <GlobalStyle>
         <ItForm submit={this.submitHandler} />
-        <Search search={this.handleName} />
-        <ListContacts
-          list={this.searchContacts()}
-          remove={this.removeContact}
-        />
+        <LIST_DIV>
+          <Search search={this.handleName} />
+          <ListContacts
+            list={this.searchContacts()}
+            remove={this.removeContact}
+          />
+        </LIST_DIV>
       </GlobalStyle>
     );
   }

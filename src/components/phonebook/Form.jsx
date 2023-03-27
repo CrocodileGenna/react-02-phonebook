@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik } from 'formik';
 
-// import { FORM_DIV } from './styled/Form.styled';
+import { FORM_DIV, INPUT } from './styled/Form.styled';
 
 export class ItForm extends Component {
   state = {
@@ -28,8 +28,9 @@ export class ItForm extends Component {
     const { name, number } = this.state;
     return (
       <Formik>
-        <Form onSubmit={this.submitForm} autoComplete="off">
-          <Field
+        <FORM_DIV onSubmit={this.submitForm} autoComplete="off">
+          Phonebook
+          <INPUT
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -39,7 +40,7 @@ export class ItForm extends Component {
             onChange={this.nameChenge}
             required
           />
-          <Field
+          <INPUT
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -50,7 +51,7 @@ export class ItForm extends Component {
             required
           />
           <button type="submit">Add contact</button>
-        </Form>
+        </FORM_DIV>
       </Formik>
     );
   }
