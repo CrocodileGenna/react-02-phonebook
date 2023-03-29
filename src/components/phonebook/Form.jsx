@@ -2,7 +2,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 
-import { FORM_DIV, INPUT } from './styled/Form.styled';
+import { FORM_DIV, INPUT, BUTTUN } from './styled/Form.styled';
 
 export class ItForm extends Component {
   state = {
@@ -51,7 +51,7 @@ export class ItForm extends Component {
             onChange={this.nameChenge}
             required
           />
-          <button type="submit">Add contact</button>
+          <BUTTUN type="submit">Add contact</BUTTUN>
         </FORM_DIV>
       </Formik>
     );

@@ -76,6 +76,6 @@ Search.propTypes = {
   search: PropTypes.func.isRequired,
 };
 ListContacts.propTypes = {
-  list: PropTypes.array.isRequired,
+  list: PropTypes.func.isRequired,
   remove: PropTypes.func.isRequired,
 };

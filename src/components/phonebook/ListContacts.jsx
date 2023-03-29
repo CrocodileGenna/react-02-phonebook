@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
-
+import { LIST_UL, ONE_CONTACT_LI, BUTTUN } from './styled/ListContacts.styled';
 export function ListContacts({ list, remove }) {
   return (
     <>
-      <ul>
+      <LIST_UL>
         {list.map(({ id, name, number }) => {
           return (
-            <li key={id}>
+            <ONE_CONTACT_LI key={id}>
               <p>{name}</p>
               <p>{number}</p>
-              <button onClick={() => remove(id)}>Delete</button>
-            </li>
+              <BUTTUN onClick={() => remove(id)}>Delete</BUTTUN>
+            </ONE_CONTACT_LI>
           );
         })}
-      </ul>
+      </LIST_UL>
     </>
   );
 }

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-
+import { INPUT } from './styled/Search.styled';
 export function Search({ search }) {
   return (
-    <input
+    <INPUT
       type="text"
       name="name"
       pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
