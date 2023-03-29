@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export function ListContacts({ list, remove }) {
   return (
     <>
@@ -15,3 +17,11 @@ export function ListContacts({ list, remove }) {
     </>
   );
 }
+
+ListContacts.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.object).isRequired,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  number: PropTypes.string,
+  remove: PropTypes.func.isRequired,
+};

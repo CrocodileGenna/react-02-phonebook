@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ItForm } from './phonebook/Form';
 import { ListContacts } from './phonebook/ListContacts';
 import { Search } from './phonebook/Search';
@@ -67,3 +68,14 @@ export class App extends Component {
     );
   }
 }
+
+ItForm.propTypes = {
+  submit: PropTypes.func.isRequired,
+};
+Search.propTypes = {
+  search: PropTypes.func.isRequired,
+};
+ListContacts.propTypes = {
+  list: PropTypes.array.isRequired,
+  remove: PropTypes.func.isRequired,
+};

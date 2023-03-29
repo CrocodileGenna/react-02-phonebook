@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export function Search({ search }) {
   return (
     <input
@@ -11,3 +13,7 @@ export function Search({ search }) {
     />
   );
 }
+
+Search.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};

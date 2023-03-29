@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 
 import { FORM_DIV, INPUT } from './styled/Form.styled';
@@ -56,3 +57,12 @@ export class ItForm extends Component {
     );
   }
 }
+
+FORM_DIV.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
+
+INPUT.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
